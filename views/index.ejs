@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="bg-slate-900 text-white p-5">
+    
+    
+    <div class="container m-auto mt-3 ">
+        <form action="/create" method="post">
+            <input name="title" type="text" class="bg-slate-600 block p-2 w-full mb-2 outline-none rounded-md " placeholder="title goes here">
+            <textarea name="description" class="resize-none bg-slate-600 block w-full outline-none p-2 rounded-md " placeholder="Enter your task description"></textarea>
+            <input type="submit" class="text-sm bg-blue-600 font-semibold p-2 mt-2 rounded-md">
+        </form>
+    </div>
+    
+    <div class="container m-auto mt-10 flex gap-2">
+        <% if(files.length > 0) { %>
+            <%  files.forEach(file => { %>
+                <div class="bg-slate-600 p-2 rounded-md w-1/4">
+                    <h1><%=file%></h1>
+                    <div class="flex justify-between">
+                        <a href='/file/<%=file%>' class="text-blue-400 text-sm">Read more</a>
+                        <a href="/edit/<%=file%>" class="text-yellow-400 text-sm">Edit task</a>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <h2 class="" >No task Yet ....!</h2>
+        <% } %>
+    </div>
+
+</body>
+</html>

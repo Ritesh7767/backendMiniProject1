@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="bg-slate-900 p-5 text-white">
+    
+    <a href="/" class="bg-blue-600 p-2 rounded-md font-semibold text-sm" >Go back</a>
+    <form action="/edit/updateFilename" method="post" class="mt-3">
+        <input type="text" name="previousName" value="<%=filename%>" readonly class="inline-block rounded-md bg-slate-600 outline-none text-slate-300 h-8 p-1 mt-2 mb-2">
+        <input type="text" name="newName" placeholder="New Task Name" class="block mb-2 rounded-md bg-slate-600 outline-none h-8 p-1 ">
+        <input type="submit" value="Update" class="bg-yellow-600 rounded-md p-2 font-semibold text-sm">
+    </form>
+
+</body>
+</html>
